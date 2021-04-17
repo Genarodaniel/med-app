@@ -6,7 +6,7 @@
         "watch": "mix watch",
         "watch-poll": "mix watch -- --watch-options-poll=1000",
         "hot": "mix watch --hot",
-        "prod": "npm run production",
+        "prod": "yarn run production",
         "production": "mix --production"
     },
     "devDependencies": {
@@ -22,6 +22,11 @@
         "sass-loader": "^8.0.0"
     },
     "dependencies": {
+        "datatables": "^1.10.18",
+        "datatables.net-bs4": "^1.10.24",
+        "datatables.net-buttons-bs4": "^1.7.0",
+        "inputmask": "^5.0.5",
+        "jquery-input-mask-phone-number": "^1.0.15",
         "npm": "^7.9.0"
     }
 }

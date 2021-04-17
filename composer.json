@@ -8,10 +8,17 @@
         "php": "^7.3|^8.0",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
+        "geekcom/validator-docs": "^3.5",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5",
-        "laravel/ui": "^3.2"
+        "laravel/ui": "^3.2",
+        "nyholm/psr7": "^1.4",
+        "symfony/psr-http-message-bridge": "^2.1",
+        "yajra/laravel-datatables": "^1.5",
+        "yajra/laravel-datatables-editor": "^1.22",
+        "yajra/laravel-datatables-html": "^4.0",
+        "yajra/laravel-datatables-oracle": "^9.17"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
