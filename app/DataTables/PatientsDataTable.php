@@ -70,12 +70,12 @@ class PatientsDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            Column::make('name'),
-            Column::make('email'),
-            Column::make('phone_number'),
-            Column::make('gender'),
-            Column::make('date_birthday'),
-            Column::make('cpf'),
+            Column::make('name')->title('Nome'),
+            Column::make('email')->title('E-mail'),
+            Column::make('phone_number')->title('Telefone'),
+            Column::make('gender')->title('Gênero'),
+            Column::make('date_birthday')->title('Data Nascimento'),
+            Column::make('cpf')->title('Cpf'),
             Column::computed('action', 'Ações')
                   ->exportable(false)
                   ->printable(false)
