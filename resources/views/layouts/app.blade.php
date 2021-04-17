@@ -7,10 +7,12 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'MedApp') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ mix('js/app.js') }}"></script>
+    <script src="{{ asset('vendor/datatables/buttons.server-side.js') }}"></script>
+    @stack('scripts')
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -33,7 +35,18 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        <li class="nav-item{{ Request::is(['schedules/*', 'schedules']) ? ' active' : '' }}">
+                            <a class="nav-link" href="{{ route('schedules.index') }}">Agendamentos</a>
+                        </li>
+                        <li class="nav-item{{ Request::is(['doctors/*', 'doctors']) ? ' active' : '' }}">
+                            <a class="nav-link" href="{{ route('doctors.index') }}">Médicos</a>
+                        </li>
+                        <li class="nav-item{{ Request::is(['patients/*', 'patients']) ? ' active' : '' }}">
+                            <a class="nav-link" href="{{ route('patients.index') }}">Pacientes</a>
+                        </li>
+                        <li class="nav-item{{ Request::is(['users/*', 'users']) ? ' active' : '' }}">
+                            <a class="nav-link" href="{{ route('users.index') }}">Usuários</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -45,7 +58,7 @@
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                             @endif
-                            
+
                             @if (Route::has('register'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
