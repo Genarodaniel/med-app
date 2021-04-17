@@ -26,7 +26,7 @@ class DoctorFactory extends Factory
             'email' => $this->faker->unique()->safeEmail,
             'phone_number' => $this->faker->phoneNumber,
             'crm' => $this->faker->numerify('#########') . '/SP',
-            'speciality' => $this->faker->randomElement(['Odontologia', 'Psiquiatria', 'Pediatria'])[0],
+            'specialty' => $this->faker->randomElement(['Odontologia', 'Psiquiatria', 'Pediatria']),
             'gender' =>$this->faker->randomElement(['M', 'F'])[0]
         ];
     }
