@@ -15,6 +15,7 @@ class UsersController extends Controller
     {
         $this->userConnection = $userConnection;
     }
+
     public function index (UsersDataTable $dataTable)
     {
         return $dataTable->render('users.index');
@@ -30,7 +31,7 @@ class UsersController extends Controller
 
     public function store(Request $request)
     {
-        $validator = $request->validate([
+        $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required','unique:users', 'string', 'email', 'max:255'],
             'password' => ['required' , 'min:8','confirmed']
@@ -44,7 +45,7 @@ class UsersController extends Controller
 
     public function destroy($id)
     {
-        $user = $this->userConnection->destroy($id);
+        $this->userConnection->destroy($id);
 
         return redirect()->route('users.index')->with('success', 'Usuário deletado!');
 
@@ -70,7 +71,7 @@ class UsersController extends Controller
             'password' => ['required' , 'min:8','confirmed']
         ]);
 
-        $user = $this->userConnection->update($id,$request->all());
+        $this->userConnection->update($id,$request->all());
 
         return redirect()->route('users.index')->with('success','Usuário editado!');
 

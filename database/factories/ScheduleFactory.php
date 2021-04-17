@@ -26,7 +26,7 @@ class ScheduleFactory extends Factory
         return [
             'patient_id' => Patient::all()->random()->id,
             'doctor_id' => Doctor::all()->random()->id,
-            'schedule' => $this->faker->dateTime(),
+            'schedule' => $this->faker->dateTimeBetween('now', '+1 year'),
         ];
 
     }

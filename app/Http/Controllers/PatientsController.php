@@ -33,7 +33,7 @@ class PatientsController extends Controller
 
     public function store(Request $request)
     {
-        $validator = $request->validate([
+        $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required','unique:patients', 'string', 'email', 'max:255'],
             'date_birthday' => ['required','date_format:Y-m-d','before:today'],
@@ -69,7 +69,7 @@ class PatientsController extends Controller
 
     public function update(Request $request, $id)
     {
-        $validator = $request->validate([
+        $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required',Rule::unique('patients')->ignore($id), 'email', 'max:255'],
             'date_birthday' => ['required','date_format:Y-m-d','before:today'],
@@ -78,7 +78,7 @@ class PatientsController extends Controller
             'gender' => ['required' , 'in:M,F']
         ]);
 
-        $patient = $this->patientConnection->update($id,$request->all());
+        $this->patientConnection->update($id,$request->all());
 
         return redirect()->route('patients.index')->with('success','Paciente editado!');
 
