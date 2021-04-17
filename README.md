@@ -13,11 +13,11 @@ Execute:
 ## Caso ja tenha rodado a aplicação e possua a pasta vendor
 #### Execute
 
->  **alias sail='bash vendor/bin/sail'**
->  **sail up -d'**
->  **sail artisan key:generate**
->  **sail artisan migrate**
->  **yarn install**
+>  **alias sail='bash vendor/bin/sail'**</br>
+>  **sail up -d**</br>
+>  **sail artisan key:generate**</br>
+>  **sail artisan migrate**</br>
+>  **yarn install**</br>
 >  **yarn run dev**
 
 
