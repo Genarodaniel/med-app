@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Patient;
 use App\DataTables\PatientsDataTable;
 use App\Rules\PhoneNumber;
 use App\Connections\PatientConnection;
@@ -72,7 +71,7 @@ class PatientsController extends Controller
     {
         $validator = $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required',Rule::unique('users')->ignore($id), 'email', 'max:255'],
+            'email' => ['required',Rule::unique('patients')->ignore($id), 'email', 'max:255'],
             'date_birthday' => ['required','date_format:Y-m-d','before:today'],
             'phone_number' => ['required', new PhoneNumber],
             'cpf' =>['required' , 'cpf'],

@@ -57,7 +57,7 @@ class UsersDataTable extends DataTable
     public function html()
     {
         return $this->builder()
-                    ->setTableId('patients-table')
+                    ->setTableId('users-table')
                     ->columns($this->getColumns())
                     ->minifiedAjax()
                     ->dom('Bfrtip')

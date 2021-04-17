@@ -20,5 +20,6 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 Route::group(['middleware' => ['auth']], function(){
     Route::resource('patients', App\Http\Controllers\PatientsController::class);
     Route::resource('users', App\Http\Controllers\UsersController::class);
+    Route::resource('doctors', App\Http\Controllers\DoctorsController::class);
 });
 
