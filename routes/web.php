@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,8 +17,8 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
-
 Route::group(['middleware' => ['auth']], function(){
     Route::resource('patients', App\Http\Controllers\PatientsController::class);
+    Route::resource('users', App\Http\Controllers\UsersController::class);
 });
 
