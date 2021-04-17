@@ -15,4 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::post('/getToken', [App\Http\Controllers\API\UsersController::class, 'getToken']);
-//Route::middleware('auth:api')->post('/getToken', [App\Http\Controllers\API\UsersController::class, 'getToken']);
+Route::middleware('auth:api')->get('/getDoctors', [App\Http\Controllers\API\DoctorsController::class, 'getDoctors']);

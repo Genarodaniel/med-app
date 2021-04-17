@@ -2,19 +2,11 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Connections\UserConnection;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class UsersController extends Controller
 {
-    private $userConnection;
-
-    public function __construct(UserConnection $userConnection)
-    {
-        $this->userConnection = $userConnection;
-    }
-
 
     public function getToken(Request $request)
     {
